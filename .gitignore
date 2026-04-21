@@ -1,0 +1,58 @@
+# =========================
+# OS Dateien
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+*.code-workspace
+
+# =========================
+# Eclipse
+# =========================
+.classpath
+.project
+.settings/
+bin/
+target/
+
+# =========================
+# IntelliJ (falls jemand wechselt)
+# =========================
+.idea/
+*.iml
+out/
+
+# =========================
+# Java / Build Tools
+# =========================
+*.class
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Temporäre Dateien
+# =========================
+*.tmp
+*.temp
+*.swp
+
+# =========================
+# Java Crash Reports
+# =========================
+hs_err_pid*

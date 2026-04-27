@@ -8,6 +8,9 @@ public class PÜ2_Aufgabe2 {
 		Scanner in = new Scanner(System.in);
 		String newString = "";
 
+		//Erklärung des Programms
+		System.out.print("Programm zum verschlüsseln von Zeichenketten \n nur A-Z und a-z werden verschlüsselt alles weitere wird übernommen");
+		
 		//Eingabeaufforderung
 		System.out.print("Geben Sie eine Zeichenkette ein: ");
 		input = in.nextLine();

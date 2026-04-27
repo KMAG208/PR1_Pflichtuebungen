@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class Aufgabe1 {
 	public static void main(String[] args) {
 		
-		//definition von Variablen
+		//Definition von Variablen
 		Scanner in = new Scanner(System.in);
 		int eingabe;
 		boolean isPrim = true;
 		
+		//Erklärung des Programms
 		System.out.println("Dieses Programm gibt alle Primzahlen kleiner gleich der eingegeben Zahl aus, \n Wird beendet durch eingabe einer Zahl kleiner als 2");
 		
 		//Berechnungsschleife

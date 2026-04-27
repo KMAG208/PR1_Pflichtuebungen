@@ -8,7 +8,7 @@ public class Aufgabe1 {
 		int eingabe;
 		boolean isPrim = true;
 		
-		System.out.println("Dieses Programm gibt alle Primzahlen kleiner gleich der eingegeben Zahl aus, \n Wird beendet durch eingabe einer Zahl kleiner als 1");
+		System.out.println("Dieses Programm gibt alle Primzahlen kleiner gleich der eingegeben Zahl aus, \n Wird beendet durch eingabe einer Zahl kleiner als 2");
 		
 		//Berechnungsschleife
 		do {

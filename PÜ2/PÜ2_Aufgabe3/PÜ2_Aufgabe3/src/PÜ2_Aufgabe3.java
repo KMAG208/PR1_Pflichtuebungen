@@ -18,7 +18,7 @@ public class PÜ2_Aufgabe3 {
 		//Berechnung der Primzahlen
 		//Wenn das doppelte von i > als die Eingabe endet die Schleife
 		for(i=2; i + i <= n; i = i + 1) {
-			//j wird immer das doppelte von i gesetzt damit nur die Vielfachen durchlaufen werden
+			//j wird immer zum start das doppelte von i gesetzt und danach immer um i erhöht damit nur die Vielfachen vom i durchlaufen werden.
 			for(j = i+i; j <= n; j = j + i) {
 				//Speichern der Markierungen an den Stellen an welchen keine Primzahlen sind
 			    Markierungen[j] = true;

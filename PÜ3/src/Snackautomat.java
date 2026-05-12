@@ -132,21 +132,23 @@ public class Snackautomat {
         //Betrag, der in Münzen aufgeteilt werden soll
         int zuWechseln;
         if(geld < preis) {
-            System.out.println("Nicht genug Geld!");
+            System.out.println("Nicht genug Geld!"); 
+            //Gesamtes Geld zurückgeben
+            zuWechseln = geld;
         }
         else {
             //berechnet das Rückgeld
             zuWechseln = geld-preis;
+        }
             
-            //verfügbare Münzen
-            int[] muenzWerte = {200, 100, 50, 20, 10, 5, 2, 1};
-            //Schleife geht alle Münzen von Groß nach Klein durch und nimmt immer so viele wie möglich
-            for(int i = 0; i < muenzWerte.length; i ++) {
-                //berechnet, wie oft die Münze verwendet werden kann 
-                ergebnis[i] = zuWechseln / muenzWerte[i];
-                //reduziert den Restbetrag
-                zuWechseln = zuWechseln % muenzWerte[i];
-            }
+        //verfügbare Münzen
+        int[] muenzWerte = {200, 100, 50, 20, 10, 5, 2, 1};
+        //Schleife geht alle Münzen von Groß nach Klein durch und nimmt immer so viele wie möglich
+        for(int i = 0; i < muenzWerte.length; i ++) {
+            //berechnet, wie oft die Münze verwendet werden kann 
+            ergebnis[i] = zuWechseln / muenzWerte[i];
+            //reduziert den Restbetrag
+            zuWechseln = zuWechseln % muenzWerte[i];
         }
         return ergebnis;
     }

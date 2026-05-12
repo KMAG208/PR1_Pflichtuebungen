@@ -56,3 +56,4 @@ logs/
 # Java Crash Reports
 # =========================
 hs_err_pid*
+/.metadata/

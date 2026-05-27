@@ -1,0 +1,103 @@
+<mxfile host="Electron">
+  <diagram name="Seite-1" id="bjaklfJxnkiJfGPFDccq">
+    <mxGraphModel dx="1201" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="Starten am ersten Element der Liste&amp;nbsp;" vertex="1">
+          <mxGeometry height="40" width="200" x="330" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-3" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="40" width="42.5" x="397.5" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-4" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="200" y="300" as="sourcePoint" />
+            <mxPoint x="397.5" y="299.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Gib Name und Preis des Produkes aus" vertex="1">
+          <mxGeometry height="40" width="140" x="350" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Gehe zum nächsten Produkt" vertex="1">
+          <mxGeometry height="40" width="140" x="350" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="419.5" y="520" as="sourcePoint" />
+            <mxPoint x="419.5" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="240" as="sourcePoint" />
+            <mxPoint x="419.5" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-26" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="400" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-27" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="160" as="sourcePoint" />
+            <mxPoint x="419.75" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-29" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="419.5" y="320" as="sourcePoint" />
+            <mxPoint x="420" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="419.5" y="400" as="sourcePoint" />
+            <mxPoint x="419.5" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-32" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="520" as="sourcePoint" />
+            <mxPoint x="560" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-33" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="560" y="520" as="sourcePoint" />
+            <mxPoint x="560" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-35" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="Drr1WZ-PjC9bTO392W_R-26" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="560" y="220" as="sourcePoint" />
+            <mxPoint x="510" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-38" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="200" y="300" as="sourcePoint" />
+            <mxPoint x="200" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-40" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="419.5" y="40" as="sourcePoint" />
+            <mxPoint x="419.5" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="490" width="520" x="120" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[aktuelles Produkt vorhanden]" vertex="1">
+          <mxGeometry height="30" width="140" x="410" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[aktuelles Produkt nicht vorhanden]" vertex="1">
+          <mxGeometry height="30" width="120" x="230" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="Drr1WZ-PjC9bTO392W_R-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Methode zur Ausgabe aller Produkte der Liste" vertex="1">
+          <mxGeometry height="60" width="140" x="140" y="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

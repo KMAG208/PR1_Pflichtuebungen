@@ -9,7 +9,7 @@ public class Einkaufsliste {
     //erstellt ein neues Einkaufslisten Objekt 
     	Einkaufsliste Einkaufslisteobj = new Einkaufsliste();
     	
-    	// Fügt vier Produkte mit Name und Preis zur Liste hinzu
+    	// Fügt drei Produkte mit Name und Preis zur Liste hinzu
     	Einkaufslisteobj.addProduct(new Produkt("Apfel", 1.50));
     	Einkaufslisteobj.addProduct(new Produkt("Birne", 2.50));
     	Einkaufslisteobj.addProduct(new Produkt("Cola", 0.75));

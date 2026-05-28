@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Einkaufsliste {
 	static Produkt first;
 	
@@ -9,17 +7,19 @@ public class Einkaufsliste {
     //erstellt ein neues Einkaufslisten Objekt 
     	Einkaufsliste Einkaufslisteobj = new Einkaufsliste();
     	
-    	// Fügt drei Produkte mit Name und Preis zur Liste hinzu
     	Einkaufslisteobj.addProduct(new Produkt("Apfel", 1.50));
     	Einkaufslisteobj.addProduct(new Produkt("Birne", 2.50));
     	Einkaufslisteobj.addProduct(new Produkt("Cola", 0.75));
-  
-    
-    	
-    	// Gibt das Produkt an Index 2 (drittes Produkt = Cola) mit Name und Preis aus
-    //	System.out.println(Einkaufslisteobj.gibtProduktAnStelle(0).name+" "+Einkaufslisteobj.gibtProduktAnStelle(0).preis);
-    	
-    	Einkaufslisteobj.zeigeProdukte(); // Gibt alle Produkte der Liste aus
+		Einkaufslisteobj.addProduct(new Produkt("Bier", 3.75));
+		Einkaufslisteobj.addProduct(new Produkt("Fanta", 4.75));
+
+
+		System.out.println("giptProduktAnStelle:");	
+		System.out.println(Einkaufslisteobj.gibtProduktAnStelle(4).name+" "+Einkaufslisteobj.gibtProduktAnStelle(4).preis);
+
+
+		System.out.println("Zeige Produkte:");
+    	Einkaufslisteobj.zeigeProdukte();    	
  	
     	
     }

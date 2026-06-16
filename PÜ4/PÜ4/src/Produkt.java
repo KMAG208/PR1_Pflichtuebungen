@@ -22,4 +22,30 @@ public class Produkt {
 			preis = ePreis;
 		}
 	}
+	
+	/**
+	 * Reduziert den Preis um den angegebenen Proentsatz.
+	 * @param prozentsatz 
+	 */
+	public void gebeRabatt(double prozentsatz) {
+		if(prozentsatz >=0 && prozentsatz <= 100) {
+			preis = preis- prozentsatz;	
+		}
+	}
+	
+	/**
+	 * gibt den Namen des Produktes zurück
+	 * @return Name des Produktes
+	 */
+	public String getName() {
+			return name;
+		}
+	
+	/**
+	 * gibt den Preis des Produktes zurück
+	 * @return Preis des Produktes
+	 */
+	public double getPreis() {
+		return preis;
+	}
 }

@@ -1,5 +1,5 @@
 public class Einkaufsliste {
-	static Produkt first;
+	Produkt[] Einkaufsliste = new Produkt[10];
 	
     public static void main(String[] args){
     	
@@ -7,20 +7,14 @@ public class Einkaufsliste {
     //erstellt ein neues Einkaufslisten Objekt 
     	Einkaufsliste Einkaufslisteobj = new Einkaufsliste();
     	
-    	Einkaufslisteobj.addProduct(new Produkt("Apfel", 1.50));
-    	Einkaufslisteobj.addProduct(new Produkt("Birne", 2.50));
-    	Einkaufslisteobj.addProduct(new Produkt("Cola", 0.75));
-		Einkaufslisteobj.addProduct(new Produkt("Bier", 3.75));
-		Einkaufslisteobj.addProduct(new Produkt("Fanta", 4.75));
 
-
-		System.out.println("giptProduktAnStelle:");	
-		System.out.println(Einkaufslisteobj.gibtProduktAnStelle(4).name+" "+Einkaufslisteobj.gibtProduktAnStelle(4).preis);
-
-
-		System.out.println("Zeige Produkte:");
-    	Einkaufslisteobj.zeigeProdukte();    	
- 	
+		//Tests
+    	Einkaufslisteobj.addProduct(new Produkt("Apfel", 1.00));
+    	Einkaufslisteobj.addProduct(new Produkt("Banane", 2.00));
+    	Einkaufslisteobj.addProduct(new Produkt("Birne", 3.00));
+		Einkaufslisteobj.addProduct(new Produkt("Banane", 4.00));
+		
+		Einkaufslisteobj.gibtProduktAnStelle(5);
     	
     }
     
@@ -29,28 +23,11 @@ public class Einkaufsliste {
      * @param produkt
      */
     public void addProduct(Produkt produkt) {
-
-    		// Erstellt eine Kopie des übergebenen Produkts
-        Produkt n = new Produkt(produkt.name, produkt.preis);
-
-        // Fall 1: Liste ist leer
-        if(first == null) {
-            first = n; // Neues Produkt wird erstes Element der Liste
-        }
-
-        // Fall 2: Liste enthält bereits Elemente
-        else {
-
-            Produkt temp = first;// Startet am ersten Element der Liste
-
-            // Bis zum letzten Element laufen
-            while(temp.next != null) {
-                temp = temp.next; // Geht zum nächsten Element
-            }
-
-            // Neues Element hinten anhängen
-            temp.next = n;
-        }
+    	for(int i = 0; i< Einkaufsliste.length; i++) {
+    		if(Einkaufsliste[i] == null) {
+    			Einkaufsliste[i] = produkt;
+    		}
+    	}
     }
 	
 	/**
@@ -62,16 +39,12 @@ public class Einkaufsliste {
 		if(index < 0) {  
 			return null; // Negativer Index ist ungültig, gibt null zurück
 		}
-			Produkt temp = first; // Startet am ersten Element der Liste
-			
-			// Läuft index-mal durch die Liste
-			for(int i = 0; i < index; i++) {
-				if(temp == null || temp.next == null) {// Prüft ob der Index größer als die Listenlänge ist
-					return null; //Index ist zu groß
-				}
-				temp = temp.next;// Geht zum nächsten Element
-			}
-			return temp; // Gibt das Produkt an der gesuchten Stelle zurück
+		
+		if(index > Einkaufsliste.length) {
+			return null;
+		}
+		
+		return Einkaufsliste[index];
 	}		
 	
 	
@@ -80,13 +53,57 @@ public class Einkaufsliste {
 	 * Jedes Produkt wird mit Name und Preis angezeigt.
 	 */
 	public void zeigeProdukte() {
-		Produkt n = first;// Startet am ersten Element der Liste
-		// Läuft solange bis das Ende der Liste erreicht ist
-		while (n != null) {
-		System.out.println(n.name+"  "+n.preis); // Gibt Name und Preis des aktuellen Produkts aus
-		n = n.next;// Geht zum nächsten Element
+		for(int i = 0; i < Einkaufsliste.length; i++) {
+			System.out.println(Einkaufsliste[i].name+" "+Einkaufsliste[i].preis);
 		}
 	}
-
 	
+	/**
+	 * Entfernt das erste Vorkommen eines Produkts anhand seines Namens.
+	 * @param produktName Name des zu entfernenden Produkts
+	 */
+	public void entferneProdukt(String produktName) {
+		int tempI = 0;
+		for(int i = 0; i < Einkaufsliste.length; i++) {
+			if(Einkaufsliste[i].name == produktName) {
+				tempI = i;
+				Einkaufsliste[i]= null;
+			}
+		}
+		
+		Produkt temp;
+		
+		for(int i = Einkaufsliste.length-1; i > tempI; i--) {
+			temp = Einkaufsliste[i];
+			Einkaufsliste[i-1] = temp;
+		}
+	}
+	
+	/**
+	 * Findet zwei Produkte, deren Preise zusammen dem Budget entsprechen.
+	 * @param budget Zielwert
+	 * @return Zwei passende Produkte oder null, falls keine Kombination existiert
+	 */
+	public Produkt[] findeProduktKombination(double budget) {
+		
+		//Geht die Produkte durch
+		for(int i = 0; i < Einkaufsliste.length -1; i++) {
+			for(int j = 1; j < Einkaufsliste.length; j++) {
+				//Überprüfung ob beide produkte identisch sind
+				if(Einkaufsliste[i]!= Einkaufsliste[j]) {
+					//Überprüfung ob der Preis der gewünschte Preis ist
+					if(Einkaufsliste[i].getPreis() + Einkaufsliste[j].getPreis() == budget) {
+						//Speichern und Rückgeben der Produkte
+						Produkt[] Produktkombination = new Produkt [2];
+						Produktkombination[0] = Einkaufsliste[i];
+						Produktkombination[1] = Einkaufsliste[j];
+						return Produktkombination;
+					}
+				}
+			}
+		}
+		//falls kein Produkt gefunden wurde
+		return null;
+	}
 }
+

@@ -19,6 +19,7 @@ Desktop.ini
 .settings/
 bin/
 target/
+.metadata/
 
 # =========================
 # IntelliJ (falls jemand wechselt)

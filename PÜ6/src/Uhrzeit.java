@@ -1,5 +1,5 @@
 public class Uhrzeit {
-	int stunden;
+	private int stunden;
 	private int minuten;
 	private int sekunden;
 	

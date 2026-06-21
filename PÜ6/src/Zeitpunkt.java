@@ -82,18 +82,22 @@ public class Zeitpunkt {
     * @return true, wenn das Datum gültig ist, sonst false.
     */
     public boolean istGueltigesDatum(int tag, int monat, int jahr){
-    	//Tag liegt nicht im gültigen Bereich des jeweiligen Monats UND Tag ist nicht größer 0 -> Datum ist ungültig
-        if (!(tag <= tageImMonat(monat, jahr) && tag > 0)) {
-            return false;            
-        } 
-        // Monat ist nicht <= 12 UND nicht > 0 -> Datum ist ungültig
+    	
+    	 // Monat ist nicht <= 12 UND nicht > 0 -> Datum ist ungültig
         if(!(monat <= 12 && monat > 0)){
             return false;
         }
+        
         // Jahr ist nicht >= 1900 -> Datum ist ungültig
         if (!(jahr >= 1900)) {
             return false;
         }
+            
+    	//Tag liegt nicht im gültigen Bereich des jeweiligen Monats UND Tag ist nicht größer 0 -> Datum ist ungültig
+        if (!(tag <= tageImMonat(monat, jahr) && tag > 0)) {
+            return false;            
+        } 
+        
         //Datum erfüllt alle Gültigkeitsanforderungen -> Datum ist gültig
         return true;
     }
@@ -407,7 +411,7 @@ public class Zeitpunkt {
     	// Neues Zeitpunkt-Objekt mit verschobenem Datum, Uhrzeit bleibt unverändert
     	return new Zeitpunkt(neuerTag, neuerMonat, neuesJahr, this.uhrzeit);
     }
-
+}
 
 
 

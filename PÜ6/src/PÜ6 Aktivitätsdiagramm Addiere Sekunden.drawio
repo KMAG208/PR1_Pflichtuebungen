@@ -1,0 +1,72 @@
+<mxfile host="Electron">
+  <diagram name="Seite-1" id="NPYIegAcqu7CFENyDmbD">
+    <mxGraphModel dx="2054" dy="1235" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="380" y="160" as="sourcePoint" />
+            <mxPoint x="379.5" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="sekunden" vertex="1">
+          <mxGeometry height="40" width="120" x="320" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="Sekundenüberlauf berechnen" vertex="1">
+          <mxGeometry height="40" width="200" x="280" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-14" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="270" />
+              <mxPoint x="380" y="270" />
+            </Array>
+            <mxPoint x="379.5" y="240" as="sourcePoint" />
+            <mxPoint x="380" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="Minutenüberlauf berechnen" vertex="1">
+          <mxGeometry height="40" width="200" x="280" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="Gx-Tt6eSaPTHCPBqCOR9-16" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="350" />
+              <mxPoint x="380" y="350" />
+            </Array>
+            <mxPoint x="379.5" y="320" as="sourcePoint" />
+            <mxPoint x="380" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uFG7t_UV-Ly9wll3TDXI-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="neue Uhrzeit erzeugen und zurückgeben" vertex="1">
+          <mxGeometry height="40" width="200" x="280" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="uFG7t_UV-Ly9wll3TDXI-7" edge="1" parent="1" source="uFG7t_UV-Ly9wll3TDXI-5" style="endArrow=none;html=1;rounded=1;curved=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Gx-Tt6eSaPTHCPBqCOR9-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="380" />
+              <mxPoint x="560" y="140" />
+            </Array>
+            <mxPoint x="480" y="540" as="sourcePoint" />
+            <mxPoint x="560" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uFG7t_UV-Ly9wll3TDXI-8" edge="1" parent="1" source="uFG7t_UV-Ly9wll3TDXI-5" style="endArrow=none;html=1;rounded=1;curved=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="380" />
+              <mxPoint x="80" y="240" />
+              <mxPoint x="80" y="140" />
+            </Array>
+            <mxPoint x="200" y="490" as="sourcePoint" />
+            <mxPoint x="320" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uFG7t_UV-Ly9wll3TDXI-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;strokeWidth=16;fontStyle=1" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;addiereSekunden(sekunden)&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;Sekunden zu einer Uhrzeit addieren&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="160" x="100" y="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -11,11 +11,14 @@ public class Uhrzeit {
 	* @param sekunden Die Sekunden der Uhrzeit (0-59).
 	*/
 	public Uhrzeit(int stunden, int minuten, int sekunden) {
-		if(stunden >= 0 && stunden <= 23 && minuten >= 0 && minuten <= 60 && sekunden >= 0 && sekunden <= 60) {
+		//Prüfung ob eingegebene Werte korrekt eingegben wurden. Alle drei Werte müssen gültig sein, desshalb &&
+		if(stunden >= 0 && stunden <= 23 && minuten >= 0 && minuten <= 59 && sekunden >= 0 && sekunden <= 59) {
+			//Gültige Werte werden direkt übernommen
 			this.sekunden = sekunden;
 			this.minuten = minuten;
 			this.stunden = stunden;
 		} else {
+			//Bei falscher Eingabe wird das Obejkt auf 00:00:00 zurückgesetzt
 			this.sekunden = 0;
 			this.minuten = 0;
 			this.stunden = 0;
@@ -53,9 +56,11 @@ public class Uhrzeit {
 	* @return true bei identischen Zeitwerten, andernfalls false (auch bei null).
 	*/
 	public boolean equals(Uhrzeit o) {
+		//Bei null eingabe wird false zurückgegeben 
 		if(o == null) {
 			return false;
 		}
+		//true nur, wenn Stunden, Minuten UND Sekunden übereinstimmen. Ansonsten false
 		return this.stunden == o.stunden && this.minuten == o.minuten && this.sekunden == o.sekunden;
 	}
 	
@@ -63,31 +68,37 @@ public class Uhrzeit {
 	* Liefert die Uhrzeit in lesbarer, immer zweistelliger Form HH:MM:SS.
 	* @return Die formatierte Uhrzeit.
 	*/
+	//Methode vertraut darauf, dass WWerte durch den Konstruktor schon korrekt sind
 	public String toString() {
+		//Leere Zeichenkette wird angelegt
 		String temp = "";
 		
+		//Stunden zweistellig in die Zeichenkette speichern (mit führender 0 falls < 10)
 		if(this.stunden< 10) {
 			temp += "0"+ this.stunden;
 		} else {
 			temp += this.stunden;
 		}
-		
+		//Zeichenkette speichert : um die Trennung zwischen Stunden und Minuten darzustellen
 		temp += ":";
 		
+		//Minuten zweistellig in die Zeichenkette speichern (mit führender 0 falls < 10)
 		if(this.minuten< 10) {
 			temp += "0"+ this.minuten;
 		} else {
 			temp += this.minuten;
 		}
-		
+		//Zeichenkette speichert : um die Trennung zwischen Minuten und Sekunden darzustellen
 		temp += ":";
 		
+		//Sekunden zweistellig in die Zeichenkette speichern (mit führender 0 falls < 10)
 		if(this.sekunden< 10) {
 			temp += "0"+ this.sekunden;
 		} else {
 			temp += this.sekunden;
 		}
 		
+		//Gibt die gespeicherte Zeichenkette im richtigen Format zurück
 		return temp;
 	}
 	
@@ -98,20 +109,28 @@ public class Uhrzeit {
 	* false.
 	*/
 	public boolean isBefore(Uhrzeit o) {
+		//Bei null eingabe wird false zurückgegeben
 		if(o == null) {
 			return false;
 		}
-		
+		//übergebene Stunden kleiner als aktuelle Stunden -> "nicht davor"
 		if(o.stunden < this.stunden) {
 			return false;
+			//übergebene Stunden größer als aktuelle Stunden -> "davor"
 		} else if(o.stunden > this.stunden){
 			return true;
+			
+			//übergebene Minuten kleiner als aktuelle Minuten -> "nicht davor"
 		} else if (o.minuten < this.minuten) {
 			return false;
+			//übergebene Minuten größer als aktuelle Minuten -> "davor"
 		} else if(o.minuten > this.minuten) {
 			return true;
+			
+			//übergebene Sekunden größer als aktuelle Sekunden -> "davor"
 		} else if (o.sekunden > this.sekunden) {
 			return true;
+			//Ansonsten (alles gleich oder Sekunden kleiner/gleich) -> "nicht davor"
 		} else {
 			return false;
 		}
@@ -124,20 +143,29 @@ public class Uhrzeit {
 	* false.
 	*/
 	public boolean isAfter(Uhrzeit o) {
+		//Bei null eingabe wird false zurückgegeben
 		if(o == null) {
 			return false;
 		}
-		
+		//übergebene Stunden kleiner als aktuelle Stunden -> "danach"
 		if(o.stunden < this.stunden) {
 			return true;
+			//übergebene Stunden größer als aktuelle Stunden -> "nicht danach"
 		} else if(o.stunden > this.stunden){
 			return false;
+			
+			//übergebene Minuten kleiner als aktuelle Minuten -> "danach"
 		} else if (o.minuten < this.minuten) {
 			return true;
+			//übergebene Minuten größer als aktuelle Minuten -> "nicht danach"
 		} else if(o.minuten > this.minuten) {
 			return false;
+			
+			//übergebene Sekunden kleiner als aktuelle Sekunden -> "danach"
 		} else if (o.sekunden < this.sekunden) {
 			return true;
+			
+			//Ansonsten (alles gleich oder Sekunden größer/gleich) -> "nicht danach"
 		} else {
 			return false;
 		}
@@ -155,19 +183,26 @@ public class Uhrzeit {
 	* @return Die nicht negative Sekundendifferenz oder 0, falls null übergeben wurde.
 	*/
 	public int differenzInSekunden(Uhrzeit o) {
+		//Bei null Eingabe wird 0 zurückgegeben
 		if(o == null) {
 			return 0;
 		}
-		
+		//Array Werte mit Sekunden pro Stunde, Sekunden pro Minute, Sekunden pro Sekunde (Umrechnungsfaktor)
 		int[] Werte = new int[]{3600, 60, 1};
+		
+		//Array WerteThis mit eingeben Werten
 		int[] WerteThis = new int[] {this.stunden, this.minuten, this.sekunden};
+		
+		//Array Werte0 mit übergebenen Werten
 		int[] WerteO = new int[] {o.stunden, o.minuten, o.sekunden};
 		int sekO = 0;
 		int sekThis = 0;
 		
-		
+		 // läuft über die drei Einheiten Stunden, Minuten, Sekunden (Index 0,1,2)
 		for(int i = 0; i < Werte.length; i++) {
+			// läuft so oft, wie der jeweilige Wert groß ist
 			for(int j = 0; j < WerteThis[i]; j++) {
+				// addiert den "Umrechnungsfaktor" jedes Mal
 				sekThis += Werte[i];
 			}
 			
@@ -175,7 +210,7 @@ public class Uhrzeit {
 				sekO += Werte[i];
 			}
 		}
-		
+		//liefert den Betrag immer positiv, damit die Differenz unnabhängig davon, welche Uhrzeit größer ist, nicht negativ wird
 		return Math.abs(sekThis - sekO);
 		
 	}
@@ -189,12 +224,18 @@ public class Uhrzeit {
 	* @return Ein neues, verschobenes Uhrzeit-Objekt.
 	*/
 	public Uhrzeit addiereSekunden(int sekunden) {
-		int Üsek = 0;
+		//Anzahl Minuten, die durch Sekunden-Überlauf entstehen
+		int Üsek = 0; 
+		//Anzahl Stunden, die durch Minuten-Überlauf entstehen 
 		int Ümin = 0;
 		
+		//Wie viele volle Minuten ergeben sich aus aktuelle Sekunde + addierende sekunden / 60 ?
 		Üsek = (this.sekunden + sekunden) / 60;
+		
+		//Wie viele volle Stunden ergeben sich aus aktuelle Minuten + neue Minuten / 60 ?
 		Ümin = (this.minuten + Üsek) / 60;
 		
+		//%24 und %60 sorgen für Überlauf-Korrektur (z.B. 24h -> wieder 0h)
 		return new Uhrzeit((this.stunden + Ümin)%24, (this.minuten + Üsek) %60, (this.sekunden + sekunden)%60);
 		
 	}

@@ -1,3 +1,10 @@
+/**
+ * Die Klasse Zeitpunkt repräsentiert ein Datum (Tag, Monat, Jahr) in
+ * Kombination mit einer Uhrzeit im gregorianischen Kalender. Sie prüft
+ * Daten auf Gültigkeit (inklusive Schaltjahrregelung), berechnet den
+ * Wochentag und ermöglicht den Vergleich sowie das Verschieben von
+ * Zeitpunkten um eine bestimmte Anzahl an Tagen.
+ */
 public class Zeitpunkt {
     private int tag;
     private int monat;
@@ -160,7 +167,7 @@ public class Zeitpunkt {
     	//Standart-Monatslängen (Index 0 = Januar ...)
         int[] monatLaenge = new int[]{31,28,31,30,31,30,31,31,30,31,30,31};
 
-        //Wenn Nicht Schaltjahr UND Februar -> normale Monatslänge aus dem Array zurückgeben (monat -1 da Array bei 0 beginnt)
+        //Wenn Nicht Schaltjahr Oder Nicht Februar -> normale Monatslänge aus dem Array zurückgeben (monat -1 da Array bei 0 beginnt)
         if(!(istSchaltjahr() && this.monat == 2)){
             return monatLaenge[this.monat-1];
         }

@@ -1,3 +1,10 @@
+/**
+ * Die Klasse Uhrzeit repräsentiert eine Uhrzeit im Format HH:MM:SS,
+ * bestehend aus Stunden, Minuten und Sekunden. Sie bietet Methoden zum
+ * Vergleichen, Formatieren und Verschieben von Uhrzeiten (z. B. um
+ * eine bestimmte Anzahl an Sekunden), wobei ein Tagesüberlauf bei
+ * Bedarf korrekt behandelt wird.
+ */
 public class Uhrzeit {
 	private int stunden;
 	private int minuten;
@@ -187,32 +194,14 @@ public class Uhrzeit {
 		if(o == null) {
 			return 0;
 		}
-		//Array Werte mit Sekunden pro Stunde, Sekunden pro Minute, Sekunden pro Sekunde (Umrechnungsfaktor)
-		int[] Werte = new int[]{3600, 60, 1};
+		//Aktuelle Uhrzeit in Sekunden seit 00:00:00 umrechnen
+		int sekundenThis = this.stunden * 3600 + this.minuten * 60 + this.sekunden;
 		
-		//Array WerteThis mit eingeben Werten
-		int[] WerteThis = new int[] {this.stunden, this.minuten, this.sekunden};
+		//Übergebene Uhrzeit in Sekunden seit 00:00:00 umrechnen
+		int sekundenO = o.stunden * 3600 + o.minuten * 60 + o.sekunden;
 		
-		//Array Werte0 mit übergebenen Werten
-		int[] WerteO = new int[] {o.stunden, o.minuten, o.sekunden};
-		int sekO = 0;
-		int sekThis = 0;
-		
-		 // läuft über die drei Einheiten Stunden, Minuten, Sekunden (Index 0,1,2)
-		for(int i = 0; i < Werte.length; i++) {
-			// läuft so oft, wie der jeweilige Wert groß ist
-			for(int j = 0; j < WerteThis[i]; j++) {
-				// addiert den "Umrechnungsfaktor" jedes Mal
-				sekThis += Werte[i];
-			}
-			
-			for(int k = 0; k < WerteO[i]; k++) {
-				sekO += Werte[i];
-			}
-		}
 		//liefert den Betrag immer positiv, damit die Differenz unnabhängig davon, welche Uhrzeit größer ist, nicht negativ wird
-		return Math.abs(sekThis - sekO);
-		
+		return Math.abs(sekundenThis - sekundenO);
 	}
 	
 	/**
